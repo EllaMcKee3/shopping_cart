@@ -1,5 +1,5 @@
 class Payment:
-    def process_a_payment(self, order, payment_info):
+    def process_payment(self, order, payment_info):
         card_number = payment_info['card_number']
         expiry_date = payment_info['expiry_date']
         cvv = payment_info['cvv']
@@ -13,8 +13,14 @@ class Payment:
         if success:
             print("Payment successful!")
             order.status = "PAID"
+            self.send_email(order)
             return True
         else:
             print("Payment failed!")
             order.status = "FAILED"
             return False
+
+    def send_email(self, order):
+        # This method sends an email to the customer to confirm the order has been paid
+        print(f"Sending email confirmation to {order.customer.email}...")
+        # Code to actually send the email would go here
