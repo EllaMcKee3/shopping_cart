@@ -2,6 +2,8 @@
 
 This is a simple shopping cart project that demonstrates how a shopping cart application might be implemented in Python.
 
+Adding a line to complete modifying the branch as part of Git workshop.
+
 ## Requirements
 
 - Python 3.x
